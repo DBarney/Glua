@@ -4,7 +4,8 @@ return function()
       title{"My Site"}
     },
     body{
-      h1{"Welcome to my basic site!"}
+      h1{"Welcome to my basic site!"},
+      img{src="/some.png"}
     }
   }
 end

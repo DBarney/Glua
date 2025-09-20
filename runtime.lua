@@ -19,6 +19,22 @@ local function safe(s)
 	return s
 end
 
+local selfClosing = {
+  area = true,
+  base = true,
+  br = true,
+  col = true,
+  embed = true,
+  hr = true,
+  img = true,
+  input = true,
+  link = true,
+  meta = true,
+  param = true,
+  source = true,
+  track = true,
+  wbr = true
+}
 -- render is the function that does all the work. It takes tables, and recursively uses the write function to render them. 
 -- the basic structure of the 'node' table is `{__name="div", child, child, arg1="value" arg2="value2"}`
 function render(node, write)
@@ -50,15 +66,21 @@ function render(node, write)
 				end
 			end
 		end
+    if selfClosing[node.__name] then
+      write("/")
+    end
 		write(">")
 	end
+  -- self closing elements, or void elements, can not have a body
+  if selfClosing[node.__name] then
+    return
+  end
   -- Now we have an opening tag, we can continue and write out the children on this node.
   -- NOTE: we are using ipairs to specifically loop over the table as if it was an array
   -- this allows us to only deal with the children: {"asdf","foo"}
 	local first = ""
 	for idx, child in ipairs(node) do
 		if type(child) == "table" then
-			write(first)
 			render(child, write)
 		elseif type(child) == "string" then
 			if node.__safe then
