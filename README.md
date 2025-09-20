@@ -13,7 +13,7 @@ This does not work inside of a template:
 
 https://go.dev/play/p/FawHmxpH4SB
 
-## Why not use an eisting pure go library?
+## Why not use an existing pure go library?
 
 Oh Please no.
 
@@ -27,6 +27,8 @@ func BuildPage(id string) *html.Node {
                 html.P("some text").ID(id)))
     }
 ```
+
+Golang is statically typed. So everything needs a type added to it. I really don't want to have to update that for every argument I pass around these components.
 
 Dont get me wrong, I like golang. This whole project is meant to be embedded in a go program. But I want it to be easier, not harder, then just writing the html directly.
 
