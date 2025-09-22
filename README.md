@@ -83,7 +83,7 @@ The actual code is divided into two sections, the golang code, and the lua code.
 
 ## Golang
 
-The golang code is responsible for managing the diffeent lua runtime globals, and setting them up with the correct environment to run in. Golang handles the final writing to the `io.Writer` and converts the golang structues to lua tables.
+The golang code is responsible for managing the different lua runtime globals, and setting them up with the correct environment to run in. Golang handles the final writing to the `io.Writer` and converts the golang structues to lua tables.
 
 ## Lua
 
@@ -145,4 +145,10 @@ There is an example runner in the `/example` folder. This can be run like so: `g
 Current examples are:
 
 - Simple
+    Just to show how this works
 - Component
+    Shows how to import a reusable component and use it
+- Optional
+    Shows a quirk with null values in a lua table and how to get around them
+- Markdown
+    Shows how to use the built in markdown converter to render a markdown string to html
