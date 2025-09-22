@@ -144,11 +144,7 @@ There is an example runner in the `/example` folder. This can be run like so: `g
 
 Current examples are:
 
-- Simple
-    Just to show how this works
-- Component
-    Shows how to import a reusable component and use it
-- Optional
-    Shows a quirk with null values in a lua table and how to get around them
-- Markdown
-    Shows how to use the built in markdown converter to render a markdown string to html
+- **Simple** | Just to show how this works
+- **Component** | Shows how to import a reusable component and use it
+- **Optional** | Shows a quirk with null values in a lua table and how to get around them
+- **Markdown** | Shows how to use the built in markdown converter to render a markdown string to html
