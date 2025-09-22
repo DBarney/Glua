@@ -77,6 +77,19 @@ And this is the html that it would generate:
 </html>
 ```
 
+# Aritecture
+
+The actual code is divided into two sections, the golang code, and the lua code.
+
+## Golang
+
+The golang code is responsible for managing the diffeent lua runtime globals, and setting them up with the correct environment to run in. Golang handles the final writing to the `io.Writer` and converts the golang structues to lua tables.
+
+## Lua
+
+Lua is where most of the interesting code actually live currently. This is where the global enviroment is setup with the correct lua metatable to support the `html{}` syntax without needing to define every possible element as its own function.
+
+Lua is also where the code that takes the lua tables and renders them correctly to a witer lives. This code should probably be rewitten in golang at some point, as it will probably work faster. Its not a high priority though as it works right now.
 
 # How does this work?
 
