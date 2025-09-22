@@ -95,6 +95,8 @@ Lua is also where the code that takes the lua tables and renders them correctly 
 
 Markdown currently lives as lua code downloaded into the project. I want to convert this over to golang, and maybe expose a function in lua that can be called, but I haven't bothered to do that yet as the current one works. Writing markdown inside of a lua string is not a good developer experience, so I am looking at better ways to do that.
 
+The library I am using is from https://github.com/mpeterv/markdown. For ease of use it is copied into this repository, as the installation instructions describe.
+
 # How does this work?
 
 ## Optional Parenthesis
