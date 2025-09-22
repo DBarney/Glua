@@ -91,6 +91,10 @@ Lua is where most of the interesting code actually live currently. This is where
 
 Lua is also where the code that takes the lua tables and renders them correctly to a witer lives. This code should probably be rewitten in golang at some point, as it will probably work faster. Its not a high priority though as it works right now.
 
+## Markdown
+
+Markdown currently lives as lua code downloaded into the project. I want to convert this over to golang, and maybe expose a function in lua that can be called, but I haven't bothered to do that yet as the current one works. Writing markdown inside of a lua string is not a good developer experience, so I am looking at better ways to do that.
+
 # How does this work?
 
 ## Optional Parenthesis

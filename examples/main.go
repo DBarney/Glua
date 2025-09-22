@@ -12,6 +12,8 @@ func main() {
 	templates := []string{
 		"simple",
 		"content",
+    "optional",
+    "markdown",
 	}
 	if len(os.Args) == 1 || !slices.Contains(templates, os.Args[1]) {
 		fmt.Println("Usage: go run ./examples/main.go {template}")
